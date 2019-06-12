@@ -74,7 +74,8 @@ __webpack_require__.r(__webpack_exports__);
 
 const httpOptions = {
     headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Headers': '*'
     })
 };
 let DataService = class DataService {
