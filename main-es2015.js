@@ -52,7 +52,7 @@ module.exports = "<form [(formGroup)]=\"provisionForm\"  class=\"form-horizontal
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form [formGroup]=\"\">\n    <table class=\"table table-striped table-dark table-bordered\">\n        <thead class=\"thead-dark\">\n          <tr>\n            <th scope=\"col\">Item</th>\n            <th scope=\"col\">Quantity (kg)</th>\n            <!-- <th scope=\"col\"> Ordered By</th> -->\n          </tr>\n        </thead>\n        <tbody>\n        <tr *ngFor=\"let data of DataFromAPi\">\n            <td>{{ data.Itemname }}</td>\n            <td> {{ data.Itemquantity }}</td>\n            <!-- <td> {{ data.Enteredby }}</td> -->\n          </tr>\n        </tbody>\n      </table>\n</form>"
+module.exports = "<form [formGroup]=\"\">\n    <table class=\"table table-striped table-dark table-bordered\">\n        <thead class=\"thead-dark\">\n          <tr>\n            <th scope=\"col\">Item</th>\n            <th scope=\"col\">Quantity (kg)</th>\n            <th scope=\"col\"> Delete </th> \n          </tr>\n        </thead>\n        <tbody>\n        <tr *ngFor=\"let data of DataFromAPi\">\n            <td>{{ data.Itemname }}</td>\n            <td> {{ data.Itemquantity }}</td>\n             <td> <button class=\"btn btn-primary\" type=\"button\" (click)=\"onDelete(data.ID)\">Delete Me</button></td> \n          </tr>\n        </tbody>\n      </table>\n</form>"
 
 /***/ }),
 
@@ -83,6 +83,7 @@ const httpOptions = {
     })
 };
 let DataService = class DataService {
+    // baseUrl:string = 'http://localhost:51952/api/Provision';
     constructor(_http) {
         this._http = _http;
         this.baseUrl = 'https://homeprovisionmanagementapi20190612025500.azurewebsites.net/api/Provision';
@@ -97,6 +98,12 @@ let DataService = class DataService {
     }
     saveProvision(provisionForm) {
         return this._http.post(this.baseUrl, JSON.stringify(provisionForm), httpOptions)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(() => {
+            this._refreshNeeded$.next();
+        }));
+    }
+    deleteProvision(id) {
+        return this._http.delete(this.baseUrl + '/' + id)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(() => {
             this._refreshNeeded$.next();
         }));
@@ -124,14 +131,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _provision_create_provision_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./provision/create-provision.component */ "./src/app/provision/create-provision.component.ts");
+/* harmony import */ var _provision_list_provision_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./provision/list-provision.component */ "./src/app/provision/list-provision.component.ts");
+/* harmony import */ var _provision_create_provision_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./provision/create-provision.component */ "./src/app/provision/create-provision.component.ts");
+
 
 
 
 
 const routes = [
-    // {path: 'list', component: ListProvisionComponent},
-    { path: 'create', component: _provision_create_provision_component__WEBPACK_IMPORTED_MODULE_3__["CreateProvisionComponent"] },
+    { path: 'list', component: _provision_list_provision_component__WEBPACK_IMPORTED_MODULE_3__["ListProvisionComponent"] },
+    { path: 'create', component: _provision_create_provision_component__WEBPACK_IMPORTED_MODULE_4__["CreateProvisionComponent"] },
     { path: '', redirectTo: '/create', pathMatch: 'full' }
 ];
 let AppRoutingModule = class AppRoutingModule {
@@ -285,12 +294,14 @@ let CreateProvisionComponent = class CreateProvisionComponent {
         });
         this.GetAllProvisions();
         this.provisionForm = this.fb.group({
+            ID: [''],
             ItemName: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(2), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(20)]],
             Itemquantity: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             OrderBy: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]]
         });
     }
     onSubmit() {
+        console.log(this.provisionForm.value);
         this.dbService.saveProvision(this.provisionForm.value).subscribe();
     }
     GetAllProvisions() {
@@ -353,6 +364,9 @@ let ListProvisionComponent = class ListProvisionComponent {
         this.dbService.getProvision().subscribe(data => {
             this.DataFromAPi = data;
         });
+    }
+    onDelete(id) {
+        this.dbService.deleteProvision(id).subscribe();
     }
 };
 ListProvisionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
