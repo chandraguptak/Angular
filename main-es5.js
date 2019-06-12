@@ -52,7 +52,7 @@ module.exports = "<form [(formGroup)]=\"provisionForm\"  class=\"form-horizontal
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form [formGroup]=\"\">\n  <table class=\"table\">\n      <tr>       \n        <th scope=\"col\">\n            Item\n          </th>\n          <th scope=\"col\">\n              Qty\n            </th>\n            <th scope=\"col\">\n                Ordered By\n              </th>\n      </tr>\n      <tr *ngFor=\"let data of DataFromAPi\">\n        <td>{{ data.Itemname }}</td>\n        <td> {{ data.Itemquantity }}</td>\n        <td> {{ data.Enteredby }}</td>\n      </tr>\n    </table>\n    \n</form>"
+module.exports = "<form [formGroup]=\"\">\n    <table class=\"table table-striped table-dark table-bordered\">\n        <thead class=\"thead-dark\">\n          <tr>\n            <th scope=\"col\">Item</th>\n            <th scope=\"col\">Qty</th>\n            <th scope=\"col\"> Ordered By</th>\n          </tr>\n        </thead>\n        <tbody>\n        <tr *ngFor=\"let data of DataFromAPi\">\n            <td>{{ data.Itemname }}</td>\n            <td> {{ data.Itemquantity }}</td>\n            <td> {{ data.Enteredby }}</td>\n          </tr>\n        </tbody>\n      </table>\n</form>"
 
 /***/ }),
 
