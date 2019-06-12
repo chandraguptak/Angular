@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <nav class=\"navbar navbar-default\">\n    <ul class=\"nav navbar-nav\">\n      <li>\n        <a routerLinkActive='active' routerLink='list' >List-All</a>\n      </li>\n      <li>\n        <a routerLinkActive='active' routerLink='create' >Create-One</a>\n      </li>\n    </ul>\n  </nav>\n  <router-outlet></router-outlet>\n</div>"
+module.exports = "<div class=\"container\">\n  <nav class=\"navbar navbar-default\">\n    <ul class=\"nav navbar-nav\">\n      <!-- <li>\n        <a routerLinkActive='active' routerLink='list' >List-All</a>\n      </li> -->\n      <li>\n        <a routerLinkActive='active' routerLink='create'>Provision's for Month</a>\n      </li>\n    </ul>\n  </nav>\n  <router-outlet></router-outlet>\n</div>"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = "<div class=\"container\">\n  <nav class=\"navbar navbar-defaul
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form [(formGroup)]=\"provisionForm\"  class=\"form-horizontal\">\n  <div class=\"panel panel-primary\">\n    <div class=\"panel-heading\">\n      <h3 class=\"panel-title\">Create Employee</h3>\n    </div>\n    <div class=\"panel-body\">\n      <div class=\"form-group\" [ngClass]=\"{'has-error': provisionForm.get('ItemName').errors &&\n        (provisionForm.get('ItemName').touched || provisionForm.get('ItemName').dirty)}\">\n\n        <label class=\"col-sm-2 control-label\" for=\"ItemName\">Item Name</label>\n        <div class=\"col-sm-8\">\n          <input id=\"ItemName\" type=\"text\" class=\"form-control\" formControlName=\"ItemName\">\n\n          <span class=\"help=block\" *ngIf=\"provisionForm.get('ItemName').errors &&\n            (provisionForm.get('ItemName').touched ||provisionForm.get('ItemName').dirty)\">\n            <span *ngIf=\"provisionForm.get('ItemName').errors.required\">\n              Full Name is Required\n            </span>\n            <span *ngIf=\"(provisionForm.get('ItemName').errors.minlength ||\n              provisionForm.get('ItemName').errors.maxlength)\">\n              Full Name should be between 2 to 10 charcters\n            </span>\n          </span>\n        </div>\n      </div>\n\n      <!-- Qty input element -->\n      <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\" for=\"Itemquantity\">Qty</label>\n        <div class=\"col-sm-8\">\n          <input id=\"Itemquantity\" type=\"text\" class=\"form-control\" formControlName=\"Itemquantity\">\n        </div>\n      </div>\n\n      <!-- <div class=\"dropdown\">\n          <label class=\"col-sm-2 control-label\" for=\"Orderby\">Orderby</label>\n            <ul class=\"dropdown-menu\">\n              <li>Sumita</li>\n              <li>Chandra</li>\n            </ul>\n        </div> -->\n        <!-- <div class=\"dropdown\">\n            <label class=\"col-sm-2 control-label\" for=\"Orderby\">Orderby</label>\n            <button class=\"btn btn-primary dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\">Orderby\n            <span class=\"caret\"></span></button>\n            <ul class=\"dropdown-menu\">\n                <li>Sumita</li>\n                <li>Chandra</li>\n            </ul>\n          </div> -->\n<!-- \n      <div formGroupName=\"skills\">\n\n        <div class=\"form-group\">\n          <label class=\"col-sm-2 control-label\" for=\"skillName\">\n            Skill\n          </label>\n          <div class=\"col-sm-4\">\n            <input type=\"text\" class=\"form-control\" id=\"skillName\" formControlName=\"skillName\" placeholder=\"Name\">\n          </div>\n          <div class=\"col-sm-4\">\n            <input type=\"text\" placeholder=\"Experience in Years\" class=\"form-control\"\n              formControlName=\"ExperienceInYears\">\n          </div>\n        </div>\n\n        <div class=\"form-group\">\n          <label class=\"col-md-2 control-label\">Proficiency</label>\n          <div class=\"col-md-8\">\n            <label class=\"radio-inline\">\n              <input id=\"proficiency\" type=\"radio\" value=\"beginner\" formControlName=\"proficiency\">Beginner\n            </label>\n            <label class=\"radio-inline\">\n              <input id=\"proficiency\" type=\"radio\" value=\"intermediate\" formControlName=\"proficiency\">Intermediate\n            </label>\n            <label class=\"radio-inline\">\n              <input id=\"proficiency\" type=\"radio\" value=\"advanced\" formControlName=\"proficiency\">Advanced\n            </label>\n          </div>\n        </div>\n      </div> -->\n\n    </div>\n    <div class=\"panel-footer\">\n      <div class=\"btn-toolbar\">\n        <button class=\"btn btn-primary\" type=\"submit\" (click)=\"onSubmit()\">Save</button>\n      </div>\n    </div>\n  </div>\n</form>\n<app-list-provision></app-list-provision>"
+module.exports = "<form [(formGroup)]=\"provisionForm\"  class=\"form-horizontal\">\n  <div class=\"panel panel-primary\">\n    <div class=\"panel-heading\">\n      <h3 class=\"panel-title\">Item to Order</h3>\n    </div>\n    <div class=\"panel-body\">\n      <div class=\"form-group\" [ngClass]=\"{'has-error': provisionForm.get('ItemName').errors &&\n        (provisionForm.get('ItemName').touched || provisionForm.get('ItemName').dirty)}\">\n\n        <label class=\"col-sm-2 control-label\" for=\"ItemName\">Item Name</label>\n        <div class=\"col-sm-8\">\n          <input id=\"ItemName\" type=\"text\" class=\"form-control\" formControlName=\"ItemName\">\n\n          <span class=\"help=block\" *ngIf=\"provisionForm.get('ItemName').errors &&\n            (provisionForm.get('ItemName').touched ||provisionForm.get('ItemName').dirty)\">\n            <span *ngIf=\"provisionForm.get('ItemName').errors.required\">\n              Full Name is Required\n            </span>\n            <span *ngIf=\"(provisionForm.get('ItemName').errors.minlength ||\n              provisionForm.get('ItemName').errors.maxlength)\">\n              Full Name should be between 2 to 10 charcters\n            </span>\n          </span>\n        </div>\n      </div>\n\n      <!-- Qty input element -->\n      <div class=\"form-group\">\n        <label class=\"col-sm-2 control-label\" for=\"Itemquantity\">Qty</label>\n        <div class=\"col-sm-8\">\n          <input id=\"Itemquantity\" type=\"text\" class=\"form-control\" formControlName=\"Itemquantity\">\n        </div>\n      </div>\n\n    </div>\n    <div class=\"panel-footer\">\n      <div class=\"btn-toolbar\">\n        <button class=\"btn btn-primary\" type=\"submit\" (click)=\"onSubmit()\">Save</button>\n      </div>\n    </div>\n  </div>\n</form>\n<app-list-provision></app-list-provision>"
 
 /***/ }),
 
@@ -52,7 +52,7 @@ module.exports = "<form [(formGroup)]=\"provisionForm\"  class=\"form-horizontal
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form [formGroup]=\"\">\n    <table class=\"table table-striped table-dark table-bordered\">\n        <thead class=\"thead-dark\">\n          <tr>\n            <th scope=\"col\">Item</th>\n            <th scope=\"col\">Qty</th>\n            <th scope=\"col\"> Ordered By</th>\n          </tr>\n        </thead>\n        <tbody>\n        <tr *ngFor=\"let data of DataFromAPi\">\n            <td>{{ data.Itemname }}</td>\n            <td> {{ data.Itemquantity }}</td>\n            <td> {{ data.Enteredby }}</td>\n          </tr>\n        </tbody>\n      </table>\n</form>"
+module.exports = "<form [formGroup]=\"\">\n    <table class=\"table table-striped table-dark table-bordered\">\n        <thead class=\"thead-dark\">\n          <tr>\n            <th scope=\"col\">Item</th>\n            <th scope=\"col\">Quantity (kg)</th>\n            <!-- <th scope=\"col\"> Ordered By</th> -->\n          </tr>\n        </thead>\n        <tbody>\n        <tr *ngFor=\"let data of DataFromAPi\">\n            <td>{{ data.Itemname }}</td>\n            <td> {{ data.Itemquantity }}</td>\n            <!-- <td> {{ data.Enteredby }}</td> -->\n          </tr>\n        </tbody>\n      </table>\n</form>"
 
 /***/ }),
 
@@ -69,6 +69,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+
+
 
 
 
@@ -81,19 +85,29 @@ var httpOptions = {
 var DataService = /** @class */ (function () {
     function DataService(_http) {
         this._http = _http;
-        // tslint:disable-next-line:no-inferrable-types
         this.baseUrl = 'https://homeprovisionmanagementapi20190612025500.azurewebsites.net/api/Provision';
+        this._refreshNeeded$ = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
     }
+    Object.defineProperty(DataService.prototype, "refreshNeeded", {
+        get: function () {
+            return this._refreshNeeded$;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    // tslint:disable-next-line:no-inferrable-types
     DataService.prototype.getProvision = function () {
         return this._http.get(this.baseUrl + '/5');
     };
     DataService.prototype.saveProvision = function (provisionForm) {
-        return this._http.post(this.baseUrl, JSON.stringify(provisionForm), httpOptions);
+        var _this = this;
+        return this._http.post(this.baseUrl, JSON.stringify(provisionForm), httpOptions)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function () {
+            _this._refreshNeeded$.next();
+        }));
     };
     DataService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-            providedIn: 'root'
-        }),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], DataService);
     return DataService;
@@ -116,17 +130,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _provision_list_provision_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./provision/list-provision.component */ "./src/app/provision/list-provision.component.ts");
-/* harmony import */ var _provision_create_provision_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./provision/create-provision.component */ "./src/app/provision/create-provision.component.ts");
-
+/* harmony import */ var _provision_create_provision_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./provision/create-provision.component */ "./src/app/provision/create-provision.component.ts");
 
 
 
 
 var routes = [
-    { path: 'list', component: _provision_list_provision_component__WEBPACK_IMPORTED_MODULE_3__["ListProvisionComponent"] },
-    { path: 'create', component: _provision_create_provision_component__WEBPACK_IMPORTED_MODULE_4__["CreateProvisionComponent"] },
-    { path: '', redirectTo: '/list', pathMatch: 'full' }
+    // {path: 'list', component: ListProvisionComponent},
+    { path: 'create', component: _provision_create_provision_component__WEBPACK_IMPORTED_MODULE_3__["CreateProvisionComponent"] },
+    { path: '', redirectTo: '/create', pathMatch: 'full' }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -276,93 +288,30 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var CreateProvisionComponent = /** @class */ (function () {
-    // validationMessages = {
-    //   'fullName': {
-    //     'required': 'Full Name is Required ',
-    //     'minlength': 'Full Name should be greater than 2 ',
-    //     'maxlength': 'Full Name should be less than 10 ',
-    //   },
-    //   'email': {
-    //     'required': 'Email is required'
-    //   },
-    //   'skillName': {
-    //     'required': 'skill Name is required'
-    //   },
-    //   'ExperienceInYears': {
-    //     'required': 'Experience in Years is required'
-    //   },
-    //   'proficiency': {
-    //     'required': 'proficiency is required'
-    //   }
-    // };
-    // forErrors = {
-    //   'fullName': '',
-    //   'ContactPreference': '',
-    //   'email': '',
-    //   'skillName': '',
-    //   'ExperienceInYears': '',
-    //   'proficiency': ''
-    // };
     function CreateProvisionComponent(fb, dbService) {
         this.fb = fb;
         this.dbService = dbService;
     }
     CreateProvisionComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.dbService.refreshNeeded.subscribe(function () {
+            _this.GetAllProvisions();
+        });
+        this.GetAllProvisions();
         this.provisionForm = this.fb.group({
             ItemName: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(2), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(20)]],
             Itemquantity: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             OrderBy: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]]
         });
-        // this.provisionForm.get('fullName').valueChanges.subscribe(
-        //   (value: string) => {
-        //     this.fullNameLength = value.length;
-        //   }
-        // );
-        // FormControl
-        // this.provisionForm = new FormGroup(
-        // {
-        //     fullName: new FormControl(),
-        //     email: new FormControl(),
-        //     skills : new FormGroup({
-        //      skillName : new FormControl(),
-        //      ExperienceInYears : new FormControl(),
-        //      proficiency : new FormControl()
-        //     })
-        // });
-    };
-    CreateProvisionComponent.prototype.logValidationErrors = function (group) {
-        var _this = this;
-        Object.keys(group.controls).forEach(function (key) {
-            var abstractControl = group.get(key);
-            if (abstractControl instanceof _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]) {
-                _this.logValidationErrors(abstractControl);
-            }
-            else {
-                //abstractControl.disable();
-            }
-        });
-    };
-    CreateProvisionComponent.prototype.onLoadDataClick = function () {
-        var _this = this;
-        this.dbService.getProvision().subscribe(function (data) {
-            _this.provisionForm.setValue({
-                fullName: data[0].fullName,
-                email: data[0].email
-            });
-        });
-        // this.provisionForm.setValue({
-        //   fullName: 'Chandra Gupta',
-        //   email: 'chandragupta@gmail.com',
-        //   skills: {
-        //     skillName: 'c#',
-        //     ExperienceInYears: 6,
-        //     proficiency: 'advanced'
-        //   }
-        // });
-        // this.logValidationErrors(this.provisionForm);
     };
     CreateProvisionComponent.prototype.onSubmit = function () {
         this.dbService.saveProvision(this.provisionForm.value).subscribe();
+    };
+    CreateProvisionComponent.prototype.GetAllProvisions = function () {
+        var _this = this;
+        this.dbService.getProvision().subscribe(function (data) {
+            _this.DataFromAPi = data;
+        });
     };
     CreateProvisionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -375,15 +324,6 @@ var CreateProvisionComponent = /** @class */ (function () {
     return CreateProvisionComponent;
 }());
 
-// function emailDomain(control: AbstractControl): { [Key: string]: any } | null {
-//   const email: string = control.value;
-//   const domain = email.substring(email.lastIndexOf('@') + 1);
-//   if (email === '' || domain.toLowerCase() === 'chandra') {
-//     return null;
-//   } else {
-//     return { 'emailDomain': true };
-//   }
-// }
 
 
 /***/ }),
@@ -420,6 +360,13 @@ var ListProvisionComponent = /** @class */ (function () {
         this.dbService = dbService;
     }
     ListProvisionComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.dbService.refreshNeeded.subscribe(function () {
+            _this.GetAllProvisions();
+        });
+        this.GetAllProvisions();
+    };
+    ListProvisionComponent.prototype.GetAllProvisions = function () {
         var _this = this;
         this.dbService.getProvision().subscribe(function (data) {
             _this.DataFromAPi = data;
